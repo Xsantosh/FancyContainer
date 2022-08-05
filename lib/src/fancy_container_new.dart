@@ -4,11 +4,8 @@ class FancyContainer extends StatefulWidget {
   final double? width;
   final double height;
   final Color? color1;
+  final Widget child;
   final Color? color2;
-  final String title;
-  final Color? textColor;
-  final String subTitle;
-  final Color? subTitleColor;
   final double? radius;
   final void Function()? onPressed;
   final EdgeInsetsGeometry? padding;
@@ -19,12 +16,9 @@ class FancyContainer extends StatefulWidget {
     this.height = 120.0,
     this.color1,
     this.color2,
-    this.title = 'Title',
-    this.textColor,
-    this.subTitle = 'Subtitle',
-    this.subTitleColor,
     this.padding,
     this.radius,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -58,31 +52,8 @@ class _FancyContainerState extends State<FancyContainer> {
                 offset: Offset(0, 6),
               )
             ]),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Text(
-                widget.title,
-                style: TextStyle(
-                  color: widget.textColor,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Text(
-                widget.subTitle,
-                style: TextStyle(
-                  color: widget.subTitleColor,
-                  fontSize: 15.0,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-            ),
-          ],
+        child: Center(
+          child: widget.child,
         ),
       ),
     );
