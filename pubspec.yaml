@@ -1,5 +1,5 @@
 name: fancy_container
-description: A new Flutter package project.
+description: This package creates a Gradient container with onPressed callback
 version: 0.0.1
 homepage: https://github.com/Xsantosh/FancyContainer
 
